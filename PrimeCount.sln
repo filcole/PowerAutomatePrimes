@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeCountTests", "PrimeCountTests\PrimeCountTests.csproj", "{169A9920-95CF-4FE5-9687-FBC5D6B38347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeCount", "PrimeCount\PrimeCount.csproj", "{7737AAFB-7A75-4D02-AA95-4FD7C4269B49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{169A9920-95CF-4FE5-9687-FBC5D6B38347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169A9920-95CF-4FE5-9687-FBC5D6B38347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169A9920-95CF-4FE5-9687-FBC5D6B38347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169A9920-95CF-4FE5-9687-FBC5D6B38347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7737AAFB-7A75-4D02-AA95-4FD7C4269B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7737AAFB-7A75-4D02-AA95-4FD7C4269B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7737AAFB-7A75-4D02-AA95-4FD7C4269B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7737AAFB-7A75-4D02-AA95-4FD7C4269B49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9BE575F-3EE9-4EAF-ADC4-005CF08E5C44}
+	EndGlobalSection
+EndGlobal
