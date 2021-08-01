@@ -17,7 +17,7 @@ namespace PrimeCount.Tests
         [InlineData(100000000, 5761455)]
         public void Number_of_primes_upto_given_number_should_be_as_expected(int upTo, int expected)
         {
-            var sieve = new PrimeCount.PrimeSieve(upTo);
+            var sieve = new Script.PrimeSieve(upTo);
             sieve.RunSieve();
             Assert.Equal(expected, sieve.CountPrimes());
         }

@@ -7,7 +7,7 @@ using Xunit;
 
 namespace PrimeCount.Tests
 {
-    internal class TestRequest : PrimeCount.IScriptContext
+    internal class TestRequest : IScriptContext
     {
         public string CorrelationId => throw new NotImplementedException();
 

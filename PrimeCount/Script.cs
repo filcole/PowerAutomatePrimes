@@ -5,8 +5,19 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace PrimeCount
+public class Script : ScriptBase
 {
+
+    public class CountPrimesRequest
+    {
+        public Int32 UpTo { get; set; }
+    }
+
+    public class CountPrimesResponse
+    {
+        public Int32 NumPrimes { get; set; }
+    }
+
     public class PrimeSieve
     {
         private readonly int SieveSize = 0;
@@ -71,34 +82,22 @@ namespace PrimeCount
         }
     }
 
-    public class CountPrimesRequest
-    {
-        public int UpTo { get; set; }
-    }
 
-    public class CountPrimesResponse
+    public override async Task<HttpResponseMessage> ExecuteAsync()
     {
-        public int NumPrimes { get; set; }
-    }
+        var request = JsonConvert.DeserializeObject<CountPrimesRequest>(await this.Context.Request.Content.ReadAsStringAsync());
 
-    public class Script : ScriptBase
-    {
-        public override async Task<HttpResponseMessage> ExecuteAsync()
+        var sieve = new PrimeSieve(request.UpTo);
+        sieve.RunSieve();
+
+        var response = new CountPrimesResponse
         {
-            var request = JsonConvert.DeserializeObject<CountPrimesRequest>(await this.Context.Request.Content.ReadAsStringAsync());
+            NumPrimes = sieve.CountPrimes()
+        };
 
-            var sieve = new PrimeSieve(request.UpTo);
-            sieve.RunSieve();
-
-            var response = new CountPrimesResponse
-            {
-                NumPrimes = sieve.CountPrimes()
-            };
-
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = CreateJsonContent(JsonConvert.SerializeObject(response))
-            };
-        }
+        return new HttpResponseMessage(HttpStatusCode.OK)
+        {
+            Content = CreateJsonContent(JsonConvert.SerializeObject(response))
+        };
     }
 }
