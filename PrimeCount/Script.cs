@@ -55,7 +55,6 @@ public class Script : ScriptBase
         // primeSieve
         //
         // Calculate the primes up to the specified limit
-
         public void RunSieve()
         {
             int factor = 3;
@@ -74,7 +73,7 @@ public class Script : ScriptBase
 
                 int increment = factor * 2;
 
-                for (int num = factor * 3; num <= SieveSize; num += increment)
+                for (int num = factor * factor; num <= SieveSize; num += increment)
                     ClearBit(num);
 
                 factor += 2;
